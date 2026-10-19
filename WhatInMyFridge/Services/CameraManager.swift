@@ -202,6 +202,11 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
 
+        // Simulator: tanpa ini Vision gagal buat espresso context.
+        #if targetEnvironment(simulator)
+        request.setValue(true, forKey: "usesCPUOnly")
+        #endif
+
         // Buffer kamera selalu berorientasi landscape. Tanpa .right, kotak
         // deteksi meleset dari objeknya.
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer,

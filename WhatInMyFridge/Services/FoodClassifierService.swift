@@ -55,9 +55,13 @@ final class FoodClassifierService {
         }
 
         request.imageCropAndScaleOption = .centerCrop
+        // Simulator: computeUnits=.cpuOnly saja belum cukup; Vision tetap
+        // mencoba buat espresso/GPU context tanpa flag ini.
+        #if targetEnvironment(simulator)
+        request.setValue(true, forKey: "usesCPUOnly")
+        #endif
 
-        // perform() bersifat blocking. Dijalankan di main thread, UI freeze
-        // selama inference berlangsung.
+        // perform() bersifat blocking. Dijalankan di background supaya UI tidak freeze.
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
         DispatchQueue.global(qos: .userInitiated).async {
             do {
