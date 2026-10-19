@@ -2,6 +2,10 @@
 
 Aplikasi iOS untuk mendeteksi bahan makanan dari foto atau kamera live, lalu memberikan rekomendasi resep secara on-device.
 
+## Tampilan Aplikasi
+
+<img width="2362" height="1029" alt="Fridge App" src="https://github.com/user-attachments/assets/9e52a237-1a6b-4c2e-be78-82485b927cb3" />
+
 ## Fitur
 
 - **Klasifikasi gambar** — unggah atau ambil foto bahan makanan, dianalisis dengan Core ML (`MyImageClassifier`)
