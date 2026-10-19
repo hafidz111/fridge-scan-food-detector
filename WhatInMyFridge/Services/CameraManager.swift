@@ -202,10 +202,6 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
 
-        #if targetEnvironment(simulator)
-        request.usesCPUOnly = true
-        #endif
-
         // Buffer kamera selalu berorientasi landscape. Tanpa .right, kotak
         // deteksi meleset dari objeknya.
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer,

@@ -24,14 +24,6 @@ final class FoodClassifierService {
         }
     }
 
-    // Simulator tidak punya akses GPU/Neural Engine. Tanpa ini Vision gagal
-    // membuat espresso context dan inference tidak menghasilkan output apa pun.
-    private func configureRequestForSimulator(_ request: VNRequest) {
-        #if targetEnvironment(simulator)
-        request.usesCPUOnly = true
-        #endif
-    }
-
     func classify(image: UIImage, completion: @escaping ([FoodResult]) -> Void) {
         guard let model = model else {
             completion([])
@@ -63,7 +55,6 @@ final class FoodClassifierService {
         }
 
         request.imageCropAndScaleOption = .centerCrop
-        configureRequestForSimulator(request)
 
         // perform() bersifat blocking. Dijalankan di main thread, UI freeze
         // selama inference berlangsung.
