@@ -6,6 +6,10 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F9C1418F3085CAB1007CB04F /* SimulatorCameraClient in Frameworks */ = {isa = PBXBuildFile; productRef = F9C1418E3085CAB1007CB04F /* SimulatorCameraClient */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F93ACCBE3081C57800F5323D /* WhatInMyFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatInMyFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -22,6 +26,7 @@
 		F93ACCBB3081C57800F5323D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				F9C1418F3085CAB1007CB04F /* SimulatorCameraClient in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -60,6 +65,9 @@
 				F93ACCC03081C57800F5323D /* WhatInMyFridge */,
 			);
 			name = WhatInMyFridge;
+			packageProductDependencies = (
+				F9C1418E3085CAB1007CB04F /* SimulatorCameraClient */,
+			);
 			productName = WhatInMyFridge;
 			productReference = F93ACCBE3081C57800F5323D /* WhatInMyFridge.app */;
 			productType = "com.apple.product-type.application";
@@ -88,6 +96,9 @@
 			);
 			mainGroup = F93ACCB53081C57800F5323D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F9C1418D3085CAB1007CB04F /* XCRemoteSwiftPackageReference "SimulatorCamera" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F93ACCBF3081C57800F5323D /* Products */;
 			projectDirPath = "";
@@ -320,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9C1418D3085CAB1007CB04F /* XCRemoteSwiftPackageReference "SimulatorCamera" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Akylas/SimulatorCamera";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9C1418E3085CAB1007CB04F /* SimulatorCameraClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9C1418D3085CAB1007CB04F /* XCRemoteSwiftPackageReference "SimulatorCamera" */;
+			productName = SimulatorCameraClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F93ACCB63081C57800F5323D /* Project object */;
 	validationLevel = 1;
